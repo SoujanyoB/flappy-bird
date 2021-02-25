@@ -1,0 +1,132 @@
+@font-face {
+    font-family: Arcade-Classic;
+    src: url('/public/assets/fonts/ARCADECLASSIC.TTF');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arcade-Classic';
+}
+
+ul {
+    list-style: none;
+    font-size: 48px;
+}
+
+
+ul.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content: space-evenly; */
+}
+
+    ul.menu li {
+        margin: 50px;
+        font-size: 4.5rem;
+    }
+
+    ul.menu li:hover {
+        cursor: pointer;
+        color: rgb(0, 0, 0, 0.5);
+    }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.difficulty{
+    display: none;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    /* transition: ease-in 5s; */
+}
+
+.displayDiv {
+    display: block;
+    transition: linear 0.5s;
+}
+
+.scores {
+    position: fixed;
+    right: 40px;
+    top: 40px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+
+
+.difficulty ul {
+    padding: 20px;
+    text-align: left;
+    /* border: 1px solid black; */
+}
+    .difficulty ul li {
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .difficulty ul li:hover {
+        cursor: pointer;
+    }
+        .difficulty ul li span {
+            margin-right: 20px;
+        }
+
+        .active span{
+            color: black;
+            text-shadow: 1px 1px 15px rgba(255, 255, 255), -1px 1px 15px rgba(255, 255, 255);
+        }
+        
+        
+
+.main {
+    /* background: url(/public/assets/images/backgroundmain.png) no-repeat center center fixed; */
+    /* background-size: cover; */
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    width : 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    filter: blur(2px);
+    transition: all 2s linear;
+}
+
+
+@media only screen and (max-width: 480px) {
+    ul {
+        font-size: 24px;
+    }
+
+    ul.menu li {
+        margin: 20px;
+        font-size: 2rem;
+    }
+
+    .difficulty{
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        /* transition: ease-in 5s; */
+    }
+}
